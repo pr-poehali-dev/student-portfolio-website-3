@@ -117,7 +117,7 @@ const HomePage = ({ onNavigate }: { onNavigate: (page: Page) => void }) => {
           </div>
           <div className="order-1 md:order-2">
             <img
-              src="https://cdn.poehali.dev/projects/b16f6943-eb73-4a25-8f01-71d428cdadbf/files/cc2b816b-bdcb-4f98-963e-e09a0e760ecb.jpg"
+              src="https://cdn.poehali.dev/files/сайт 1.jpg"
               alt="Маняпов Артём"
               className="w-full rounded-2xl shadow-xl"
             />
@@ -411,12 +411,24 @@ const ResumePage = ({ onNavigate }: { onNavigate: (page: Page) => void }) => {
 const AchievementsPage = () => {
   const achievements = [
     {
-      title: 'Достижение 1',
-      description: 'Описание первого достижения в учебной или профессиональной деятельности',
+      title: 'Сертификат «Урок Цифры»',
+      description: 'За участие в уроке по теме «Видеоплатформа» всероссийской образовательной акции «Урок Цифры». Закаленный профессионал.',
+      image: 'https://cdn.poehali.dev/files/достижение.png',
     },
     {
-      title: 'Достижение 2',
-      description: 'Описание второго достижения, участие в конкурсах или проектах',
+      title: 'Свидетельство об окончании курса',
+      description: 'Поздравляем! Вы достойны свидетельства по окончании курса социально-гуманитарной направленности «Школа волонтеров» (базовый и профильный).',
+      image: 'https://cdn.poehali.dev/files/достижение 2.png',
+    },
+    {
+      title: 'Сертификат «Образование XXI века»',
+      description: 'Маняпов Артём Артурович прошёл обучение по дополнительной образовательной программе химико-биологического профиля в Санкт-Петербурге, март 2022.',
+      image: 'https://cdn.poehali.dev/files/достижение 3.jpg',
+    },
+    {
+      title: 'Сертификат дополнительного обучения',
+      description: 'Участие в образовательных программах и проектах для профессионального развития.',
+      image: 'https://cdn.poehali.dev/files/достидение 4.jpg',
     },
   ];
 
@@ -430,39 +442,23 @@ const AchievementsPage = () => {
 
         <div className="grid md:grid-cols-2 gap-6 mb-8">
           {achievements.map((achievement, index) => (
-            <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
-              <div className="flex items-start mb-4">
-                <div className="bg-primary/10 p-3 rounded-full mr-4">
-                  <Icon name="Award" size={24} className="text-primary" />
+            <Card key={index} className="p-0 overflow-hidden hover:shadow-lg transition-shadow">
+              <img
+                src={achievement.image}
+                alt={achievement.title}
+                className="w-full h-64 object-contain bg-muted/20"
+              />
+              <div className="p-6">
+                <div className="flex items-start mb-3">
+                  <div className="bg-primary/10 p-2 rounded-full mr-3">
+                    <Icon name="Award" size={20} className="text-primary" />
+                  </div>
+                  <h3 className="text-lg font-semibold">{achievement.title}</h3>
                 </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">{achievement.title}</h3>
-                  <p className="text-muted-foreground">{achievement.description}</p>
-                </div>
+                <p className="text-muted-foreground text-sm leading-relaxed">{achievement.description}</p>
               </div>
             </Card>
           ))}
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-6">
-          <Card className="p-0 overflow-hidden">
-            <div className="bg-muted/30 h-64 flex items-center justify-center">
-              <Icon name="Image" size={48} className="text-muted-foreground" />
-            </div>
-            <div className="p-4">
-              <h3 className="font-semibold">Достижение 3 (фото)</h3>
-              <p className="text-sm text-muted-foreground">Визуальное подтверждение достижения</p>
-            </div>
-          </Card>
-          <Card className="p-0 overflow-hidden">
-            <div className="bg-muted/30 h-64 flex items-center justify-center">
-              <Icon name="Image" size={48} className="text-muted-foreground" />
-            </div>
-            <div className="p-4">
-              <h3 className="font-semibold">Достижение 4 (фото)</h3>
-              <p className="text-sm text-muted-foreground">Дипломы, сертификаты, награды</p>
-            </div>
-          </Card>
         </div>
 
         <Card className="mt-8 p-8 bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/20">
