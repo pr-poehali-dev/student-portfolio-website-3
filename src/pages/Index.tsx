@@ -304,95 +304,123 @@ const ResumePage = ({ onNavigate }: { onNavigate: (page: Page) => void }) => {
         <h2 className="text-4xl font-bold mb-8">Резюме</h2>
         
         <Card className="p-8 mb-6">
-          <div className="flex items-center justify-between mb-6">
-            <div>
-              <h3 className="text-3xl font-bold">Маняпов Артём</h3>
+          <div className="grid md:grid-cols-3 gap-6 mb-6">
+            <div className="md:col-span-2">
+              <h3 className="text-3xl font-bold">Маняпов Артём Артурович</h3>
               <p className="text-xl text-primary font-medium mt-2">Студент-строитель</p>
             </div>
-            <div className="hidden md:block">
-              <Icon name="UserCircle" size={64} className="text-primary/20" />
+            <div className="flex justify-center md:justify-end">
+              <img
+                src="https://cdn.poehali.dev/files/рез.jpg"
+                alt="Маняпов Артём"
+                className="w-32 h-32 rounded-full object-cover shadow-lg"
+              />
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 mb-8">
+          <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div>
               <h4 className="font-semibold mb-3 flex items-center">
-                <Icon name="MapPin" size={20} className="mr-2 text-primary" />
+                <Icon name="Contact" size={20} className="mr-2 text-primary" />
                 Контактная информация
               </h4>
               <div className="space-y-2 text-foreground/80">
-                <p>Город: Челябинск</p>
-                <p>Образовательная организация: ГБПОУ "ЮУГК"</p>
+                <p className="flex items-center">
+                  <Icon name="Phone" size={16} className="mr-2 text-primary" />
+                  +7 (952) 521-21-23
+                </p>
+                <p className="flex items-center">
+                  <Icon name="Mail" size={16} className="mr-2 text-primary" />
+                  artemmanyapov@gmail.com
+                </p>
+                <p className="flex items-center">
+                  <Icon name="MapPin" size={16} className="mr-2 text-primary" />
+                  Челябинск
+                </p>
+                <p className="flex items-center text-sm">
+                  <Icon name="Home" size={16} className="mr-2 text-primary" />
+                  ул. Молодогвардейцев, дом 58 кв 64
+                </p>
               </div>
             </div>
             <div>
               <h4 className="font-semibold mb-3 flex items-center">
-                <Icon name="Calendar" size={20} className="mr-2 text-primary" />
-                Период обучения
+                <Icon name="GraduationCap" size={20} className="mr-2 text-primary" />
+                Образование
               </h4>
               <div className="space-y-2 text-foreground/80">
-                <p>Начало: 2024</p>
-                <p>Окончание: 2028</p>
-                <p>Текущий курс: 1 курс</p>
+                <p className="font-medium">Южно-Уральский государственный технический колледж</p>
+                <p>Факультет: Строительство и эксплуатация зданий и сооружений</p>
+                <p>Курс: 2 курс</p>
+                <p>Период: 2024 - 2028</p>
               </div>
             </div>
           </div>
 
           <div className="border-t pt-6 mb-6">
             <h4 className="font-semibold mb-4 flex items-center text-lg">
-              <Icon name="Target" size={22} className="mr-2 text-primary" />
-              Профессиональные цели
+              <Icon name="Wrench" size={22} className="mr-2 text-primary" />
+              Навыки
             </h4>
-            <p className="text-foreground/80 leading-relaxed">
-              Получение качественного профессионального образования в области строительства 
-              и эксплуатации зданий и сооружений. Стремление к освоению современных технологий 
-              информационного моделирования (BIM) и применению полученных знаний на практике.
-            </p>
-          </div>
-
-          <div className="border-t pt-6 mb-6">
-            <h4 className="font-semibold mb-4 flex items-center text-lg">
-              <Icon name="BookOpen" size={22} className="mr-2 text-primary" />
-              Ключевые компетенции в процессе освоения
-            </h4>
-            <div className="grid md:grid-cols-2 gap-3">
+            <div className="space-y-2">
               {[
-                'Инженерная графика',
-                'Техническая механика',
-                'Проектирование зданий',
-                'Технологии BIM',
-                'Организация процессов',
-                'Геодезия',
+                'Коммуникабельность и дружелюбное отношение к людям',
+                'Умение эффективно организовывать свое время',
+                'Внимательность к деталям и ответственность',
+                'Базовые навыки работы с ПК и офисными программами',
+                'Умение быстро учиться и адаптироваться к новым задачам',
               ].map((skill, index) => (
-                <div key={index} className="flex items-center">
-                  <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
+                <div key={index} className="flex items-start">
+                  <Icon name="CheckCircle2" size={18} className="text-primary mr-2 mt-0.5 flex-shrink-0" />
                   <span className="text-foreground/80">{skill}</span>
                 </div>
               ))}
             </div>
           </div>
 
+          <div className="border-t pt-6 mb-6">
+            <h4 className="font-semibold mb-4 flex items-center text-lg">
+              <Icon name="Briefcase" size={22} className="mr-2 text-primary" />
+              Опыт работы
+            </h4>
+            <p className="text-foreground/80 leading-relaxed">
+              Пока нет опыта работы в области администрирования, однако готов к обучению 
+              и быстрому освоению новых навыков.
+            </p>
+          </div>
+
           <div className="border-t pt-6">
             <h4 className="font-semibold mb-4 flex items-center text-lg">
-              <Icon name="Sparkles" size={22} className="mr-2 text-primary" />
-              Личные качества
+              <Icon name="Info" size={22} className="mr-2 text-primary" />
+              Дополнительная информация
             </h4>
-            <div className="flex flex-wrap gap-2">
-              {[
-                'Ответственность',
-                'Обучаемость',
-                'Целеустремленность',
-                'Внимательность',
-                'Командная работа',
-                'Аналитическое мышление',
-              ].map((quality, index) => (
-                <span
-                  key={index}
-                  className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium"
-                >
-                  {quality}
-                </span>
-              ))}
+            <div className="space-y-3">
+              <div>
+                <p className="font-medium text-foreground mb-2">Активности:</p>
+                <div className="space-y-2">
+                  <div className="flex items-start">
+                    <Icon name="Heart" size={18} className="text-primary mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="text-foreground/80">Волонтерство</span>
+                  </div>
+                  <div className="flex items-start">
+                    <Icon name="Users" size={18} className="text-primary mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="text-foreground/80">Участие в студенческих проектах и мероприятиях на базе факультета</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <p className="font-medium text-foreground mb-2">Хобби:</p>
+                <div className="flex flex-wrap gap-2">
+                  {['Спорт (бег, фитнес)', 'Чтение', 'Участие в творческих конкурсах'].map((hobby, index) => (
+                    <span
+                      key={index}
+                      className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium"
+                    >
+                      {hobby}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </Card>
