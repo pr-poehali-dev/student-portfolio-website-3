@@ -21,8 +21,12 @@ const Index = () => {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-border shadow-sm">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
-            <div className="flex items-center space-x-2">
-              <Icon name="Building2" className="text-primary" size={28} />
+            <div className="flex items-center space-x-3">
+              <img 
+                src="https://cdn.poehali.dev/files/иконка сайта.jpg" 
+                alt="ЮРГК" 
+                className="h-10 w-10 object-contain"
+              />
               <h1 className="text-xl font-semibold">Маняпов Артём</h1>
             </div>
             <div className="hidden md:flex space-x-1">
